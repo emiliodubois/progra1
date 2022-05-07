@@ -14,7 +14,7 @@ public class CentToInchesConversor extends GenericConversor {
         
     }
     
-        @Override
+    @Override
     public Object convertFirstToSecond() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -22,6 +22,21 @@ public class CentToInchesConversor extends GenericConversor {
     @Override
     public Object convertSecondToFirst() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public String getListText() {
+        return "Centimetros a Pulgadas";
+    }
+
+    @Override
+    public String getFirstLabel() {
+        return "Centimetros";
+    }
+
+    @Override
+    public String getSecondLabel() {
+        return "Pulgadas";
     }
     
 }

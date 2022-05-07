@@ -12,16 +12,14 @@ package com.unlam.grupo7.conversor.model;
  */
 public abstract class GenericConversor<T,K> {
     
-    protected String labelFirst;
-    
-    private String labelSecond;
-    
-    private T valueFirst;
-    
-    private K valueSecond;
-    
     public abstract T convertFirstToSecond();
     
     public abstract K convertSecondToFirst();
+    
+    public abstract String getListText();
+    
+    public abstract String getFirstLabel();
+    
+    public abstract String getSecondLabel();
     
 }
