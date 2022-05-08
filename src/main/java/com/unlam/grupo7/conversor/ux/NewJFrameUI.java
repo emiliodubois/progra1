@@ -6,6 +6,7 @@ package com.unlam.grupo7.conversor.ux;
 
 import com.unlam.grupo7.conversor.model.CentToInchesConversor;
 import com.unlam.grupo7.conversor.model.GenericConversor;
+import com.unlam.grupo7.conversor.model.KmToMilesConversor;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -26,8 +27,7 @@ public class NewJFrameUI extends javax.swing.JFrame {
      */
     public NewJFrameUI() {
         conversores.add(new CentToInchesConversor());
-        conversores.add(new CentToInchesConversor());
-        conversores.add(new CentToInchesConversor());
+        conversores.add(new KmToMilesConversor());
         
         for (GenericConversor gc : conversores)
         {
@@ -45,17 +45,35 @@ public class NewJFrameUI extends javax.swing.JFrame {
 	    selectedConversor = conversores.get(selectedIndex);
 	    jLabel1.setText(selectedConversor.getFirstLabel());
 	    jLabel2.setText(selectedConversor.getSecondLabel());
+            jTextField1.setText("");
+            jTextField2.setText("");
     }
     
     private void convert()
     {
-        if(firstTextLostFocus)
+        try
         {
-            jTextField2.setText(selectedConversor.convertFirstToSecond(jTextField1.getText()));
+            if(firstTextLostFocus)
+            {
+                jTextField2.setText(selectedConversor.convertFirstToSecond(jTextField1.getText()));
+            }
+            else
+            {
+                jTextField1.setText(selectedConversor.convertSecondToFirst(jTextField2.getText()));
+            }
         }
-        else
+        catch (NumberFormatException e)
         {
-            jTextField1.setText(selectedConversor.convertSecondToFirst(jTextField2.getText()));
+            if(firstTextLostFocus)
+            {
+            JOptionPane.showMessageDialog(this, "Error al convertir "+selectedConversor.getFirstLabel()+" a "+selectedConversor.getSecondLabel()+", por favor revise los datos ingresados", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(this, "Error al convertir "+selectedConversor.getSecondLabel()+" a "+selectedConversor.getFirstLabel()+", por favor revise los datos ingresados", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 
@@ -172,7 +190,7 @@ public class NewJFrameUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2FocusLost
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+        setSelectedConversor();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
 //    private void convertToValueTwo(){

@@ -12,9 +12,9 @@ package com.unlam.grupo7.conversor.model;
  */
 public abstract class GenericConversor {
     
-    public abstract String convertFirstToSecond(String string);
+    public abstract String convertFirstToSecond(String string) throws NumberFormatException;
     
-    public abstract String convertSecondToFirst(String string);
+    public abstract String convertSecondToFirst(String string) throws NumberFormatException;
     
     public abstract String getListText();
     
