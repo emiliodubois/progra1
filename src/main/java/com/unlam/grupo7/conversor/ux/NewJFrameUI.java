@@ -4,9 +4,12 @@
  */
 package com.unlam.grupo7.conversor.ux;
 
+import com.unlam.grupo7.conversor.model.CelsiusToFahrenConversor;
 import com.unlam.grupo7.conversor.model.CentToInchesConversor;
 import com.unlam.grupo7.conversor.model.GenericConversor;
+import com.unlam.grupo7.conversor.model.HPToKWConversor;
 import com.unlam.grupo7.conversor.model.KmToMilesConversor;
+import com.unlam.grupo7.conversor.model.MBToGBConversor;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,9 @@ public class NewJFrameUI extends javax.swing.JFrame {
     public NewJFrameUI() {
         conversores.add(new CentToInchesConversor());
         conversores.add(new KmToMilesConversor());
+        conversores.add(new CelsiusToFahrenConversor());
+        conversores.add(new MBToGBConversor());
+        conversores.add(new HPToKWConversor());
         
         for (GenericConversor gc : conversores)
         {
@@ -56,11 +62,11 @@ public class NewJFrameUI extends javax.swing.JFrame {
         {
             if(firstTextLostFocus)
             {
-                jTextField2.setText(selectedConversor.convertFirstToSecond(jTextField1.getText()));
+                jTextField2.setText(selectedConversor.convertFirstToSecond(jTextField1.getText().replaceAll(",",".")));
             }
             else
             {
-                jTextField1.setText(selectedConversor.convertSecondToFirst(jTextField2.getText()));
+                jTextField1.setText(selectedConversor.convertSecondToFirst(jTextField2.getText().replaceAll(",",".")));
             }
         }
         catch (NumberFormatException e)
@@ -217,19 +223,6 @@ public class NewJFrameUI extends javax.swing.JFrame {
             convert();
         }
     }//GEN-LAST:event_jTextField2KeyPressed
-
-//    private void convertToValueTwo(){
-//	   Double valueOne  ,valueTwo;
-//	   try {
-//		   valueOne = Double.valueOf(jTextField1.getText().replaceAll(",","."));
-//	   } catch (NumberFormatException e) {
-//		   JOptionPane.showMessageDialog(this, "Error al convertir " + selectedConversor.getFirstLabel() +
-//			" a " + selectedConversor.getSecondLabel(),"Error" , JOptionPane.ERROR_MESSAGE);
-//		   return;
-//	    } 
-//	  valueTwo = (Double) selectedConversor.convertFirstToSecond(valueOne);
-//	  jTextField2.setText(String.format("%.2f",valueTwo));
-//    } 
 
     /**
      * @param args the command line arguments

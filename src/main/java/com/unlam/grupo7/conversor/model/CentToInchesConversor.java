@@ -19,14 +19,14 @@ public class CentToInchesConversor extends GenericConversor {
     @Override
     public String convertFirstToSecond(String firstvalue) {
         Double first = Double.valueOf(firstvalue);
-	return String.valueOf(first/INCH);
+	return String.valueOf(String.format("%.2f",first/INCH));
     }
 
 
     @Override
     public String convertSecondToFirst(String secondValue) {
         Double second = Double.valueOf(secondValue);
-	return String.valueOf(second*INCH);
+	return String.valueOf(String.format("%.2f",second*INCH));
     }
 
     @Override

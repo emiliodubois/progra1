@@ -18,13 +18,13 @@ public class KmToMilesConversor extends GenericConversor {
         @Override
     public String convertFirstToSecond(String firstvalue) {
         Double first = Double.valueOf(firstvalue);
-	return String.valueOf(first/MILE);
+	return String.valueOf(String.format("%.2f",first/MILE));
     }
 
     @Override
     public String convertSecondToFirst(String secondValue) {
         Double second = Double.valueOf(secondValue);
-	return String.valueOf(second*MILE);
+	return String.valueOf(String.format("%.2f",second*MILE));
     }
 
     @Override
