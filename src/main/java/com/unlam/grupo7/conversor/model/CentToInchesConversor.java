@@ -10,14 +10,17 @@ package com.unlam.grupo7.conversor.model;
  */
 public class CentToInchesConversor extends GenericConversor {
 
+	private static final double INCH = 2.54;
+
     public CentToInchesConversor() {
         
     }
-    
+
     @Override
-    public Object convertFirstToSecond() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Object convertFirstToSecond(Double firstvalue) {
+	return firstvalue/INCH;
     }
+
 
     @Override
     public Object convertSecondToFirst() {
@@ -38,5 +41,5 @@ public class CentToInchesConversor extends GenericConversor {
     public String getSecondLabel() {
         return "Pulgadas";
     }
-    
+
 }

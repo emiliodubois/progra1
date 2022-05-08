@@ -12,7 +12,7 @@ package com.unlam.grupo7.conversor.model;
  */
 public abstract class GenericConversor<T,K> {
     
-    public abstract T convertFirstToSecond();
+    public abstract T convertFirstToSecond(Double firstvalue);
     
     public abstract K convertSecondToFirst();
     
