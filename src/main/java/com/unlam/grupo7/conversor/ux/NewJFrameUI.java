@@ -7,6 +7,7 @@ package com.unlam.grupo7.conversor.ux;
 import com.unlam.grupo7.conversor.model.CentToInchesConversor;
 import com.unlam.grupo7.conversor.model.GenericConversor;
 import com.unlam.grupo7.conversor.model.KmToMilesConversor;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -107,6 +108,11 @@ public class NewJFrameUI extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         btnConvertir.setText("Convertir");
         btnConvertir.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +126,11 @@ public class NewJFrameUI extends javax.swing.JFrame {
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextField2FocusLost(evt);
+            }
+        });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
             }
         });
 
@@ -192,6 +203,20 @@ public class NewJFrameUI extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         setSelectedConversor();
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            firstTextLostFocus = true;
+            convert();
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            firstTextLostFocus = false;
+            convert();
+        }
+    }//GEN-LAST:event_jTextField2KeyPressed
 
 //    private void convertToValueTwo(){
 //	   Double valueOne  ,valueTwo;
