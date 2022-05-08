@@ -75,6 +75,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField1FocusLost"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
       </Events>
     </Component>
@@ -92,6 +93,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
+      <Events>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField2FocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
@@ -99,6 +103,9 @@
           <Connection code="new javax.swing.DefaultComboBoxModel&lt;String&gt;(lista.toArray(new String[0]))" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>

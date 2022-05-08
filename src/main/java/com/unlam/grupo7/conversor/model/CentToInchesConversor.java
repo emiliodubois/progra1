@@ -17,19 +17,21 @@ public class CentToInchesConversor extends GenericConversor {
     }
 
     @Override
-    public Object convertFirstToSecond(Double firstvalue) {
-	return firstvalue/INCH;
+    public String convertFirstToSecond(String firstvalue) {
+        Double first = Double.valueOf(firstvalue);
+	return String.valueOf(first/INCH);
     }
 
 
     @Override
-    public Object convertSecondToFirst() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public String convertSecondToFirst(String secondValue) {
+        Double second = Double.valueOf(secondValue);
+	return String.valueOf(second*INCH);
     }
 
     @Override
     public String getListText() {
-        return "Centimetros a Pulgadas";
+        return "Centimetros - Pulgadas";
     }
 
     @Override

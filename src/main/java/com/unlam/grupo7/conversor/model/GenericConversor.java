@@ -10,11 +10,11 @@ package com.unlam.grupo7.conversor.model;
  * @param <T>
  * @param <K>
  */
-public abstract class GenericConversor<T,K> {
+public abstract class GenericConversor {
     
-    public abstract T convertFirstToSecond(Double firstvalue);
+    public abstract String convertFirstToSecond(String string);
     
-    public abstract K convertSecondToFirst();
+    public abstract String convertSecondToFirst(String string);
     
     public abstract String getListText();
     
