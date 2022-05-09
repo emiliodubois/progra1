@@ -10,7 +10,7 @@ package com.unlam.grupo7.conversor.model;
  * @author juhan
  */
 public class MBToGBConversor extends GenericConversor {
-    private static final double VALUE = 1000;
+    private static final double VALUE = 1024;
 
     public MBToGBConversor() {
     }
